@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="E:/jar包/cglib/CGlib动态代理/asm-2.2.3.jar"/>
+	<classpathentry kind="lib" path="E:/jar包/cglib/CGlib动态代理/asm-commons-2.2.3.jar"/>
+	<classpathentry kind="lib" path="E:/jar包/cglib/CGlib动态代理/asm-util-2.2.3.jar"/>
+	<classpathentry kind="lib" path="E:/jar包/cglib/CGlib动态代理/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="F:/springSource/Dom4j_Test/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="F:/springSource/Dom4j_Test/lib/jaxen-1.1-beta-6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<note xmlns="http://www.dimit.com.cn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.dimit.com.cn http://www.dimit.com.cn/dimit/test.xsd">
+	<to>George</to>
+	<from>John</from>
+	<heading>Reminder</heading>
+	<body>Don't forget the meeting!</body>
+	<age>120</age>
+	
+	<car>Audi</car><!-- 限定为枚举类型中几个字母中的一个 -->
+	
+	<letter>a</letter><!-- 限定只能输入为小写字母 -->
+	
+	<letter1>fasdf</letter1> <!-- 可接受的值是 a - z 中零个或多个字母 -->
+	
+	<!--限定的名为 "letter2" 的元素。可接受的值是一对或多对字母，
+	每对字母由一个小写字母后跟一个大写字母组成。 举个例子，"sToP"将会通过这种模式的验证，但是 
+		"Stop"、"STOP" 或者 "stop" 无法通过验证 -->
+	<letter2>aD</letter2>
+	
+	<!-- 限定的名为 "gender" 的元素。可接受的值是 male 或者 female -->
+	<gender>male</gender>
+	
+	<!-- 限定的名为 "password" 的元素。可接受的值是由 8 个字符组成的一行字符，这些字符必须是大写或小写字母 a - z 亦或数字 0 - 9 -->
+	<password>444aaaaa</password>
+	
+	<initials>DAD</initials><!-- 限定输入的内同必须为三个大写字母 -->
+	<initial>sdD</initial><!-- 限定输入的值必须为字母 忽略大小写 -->
+	<choice>x</choice><!-- 限定只能从给定的值中选择一个值输入 -->
+	<prodid>44445</prodid> <!-- 限定输入的值必须为五个0-9的阿拉伯数字 -->
+	<!-- 定义了带有一个限定的名为 "address" 的元素。这个 whiteSpace 限定被设置为 "preserve"，这意味着 XML 处理器不会移除任何空白字符 -->
+	<address>asd </address>
+	<!-- 长度只能为8位 -->
+	<password1>asdasaaa</password1>
+	<!-- 最大长度最小长度限定 -->
+	<password2>55555</password2>
+</note>

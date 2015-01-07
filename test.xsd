@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.dimit.com.cn" xmlns="http://www.dimit.com.cn"
+	elementFormDefault="qualified">
+	<xs:element name="note">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="to" type="xs:string" />
+				<xs:element name="from" type="xs:string" />
+				<xs:element name="heading" type="xs:string" />
+				<xs:element name="body" type="xs:string" />
+				<!-- 整数值大小限定 -->
+				<xs:element name="age">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:minInclusive value="0" />
+							<xs:maxInclusive value="120" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- 整数值大小限定 -->
+				<!-- 枚举值限定 -->
+				<xs:element name="car">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Audi" />
+							<xs:enumeration value="Golf" />
+							<xs:enumeration value="BMW" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- 枚举值限定结束 -->
+				<!-- 模式约束 -->
+				<xs:element name="letter">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[a-z]" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="letter1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="([a-z])*" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="letter2">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="([a-z][A-Z])+" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="gender">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="male|female" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="password">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[a-zA-Z0-9]{8}" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="initials">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[A-Z][A-Z][A-Z]" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="initial">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[a-zA-Z][a-zA-Z][a-zA-Z]" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="choice">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="[xyz]" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="prodid">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer">
+							<xs:pattern value="[0-9][0-9][0-9][0-9][0-9]" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- 模式约束结束 -->
+
+				<!-- 对空白字符的限定 -->
+				<xs:element name="address">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<!-- value : preserve = 不会移除空格、制表符、换行、回车等 replace = 会移除空格、制表符、换行、回车等 
+								collapse = 换行、回车、空格以及制表符会被替换为空格，开头和结尾的空格会被移除，而多个连续的空格会被缩减为一个单一的空格 -->
+							<xs:whiteSpace value="preserve" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="password1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="8" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="password2">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="5" />
+							<xs:maxLength value="8" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
