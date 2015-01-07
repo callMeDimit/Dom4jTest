@@ -4,6 +4,7 @@ package com.undergrowth.dom4j;
  */
 public class MainClass {
 	public static void main(String[] args) {
+		
 		Dom4j_Test test = Dom4jTestFactory.getProxy();
 		test.createXml("stus.xml");
 		//使用根节点的方式获取节点元素
