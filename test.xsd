@@ -2,13 +2,59 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.dimit.com.cn" xmlns="http://www.dimit.com.cn"
 	elementFormDefault="qualified">
+	<!-- 复杂元素 -->
+	<xs:complexType name="aaa">
+		<xs:sequence>
+			<xs:element name="firstname" type="xs:string" />
+			<xs:element name="lastname" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- 在已有的复合元素之上以某个复合元素为基础，然后添加一些元素 -->
+	<xs:complexType name="personinfo">
+		<xs:sequence>
+			<xs:element name="firstname" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="fullpersoninfo">
+		<xs:complexContent>
+			<xs:extension base="personinfo">
+				<xs:sequence>
+					<xs:element name="address" type="xs:string" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- 元素组开始 注意： 1、您必须在 group 声明内部定义一个 all、choice 或者 sequence 元素 -->
+	<xs:group name="persongroup">
+		<xs:sequence>
+			<xs:element name="firstname" type="xs:string" />
+			<xs:element name="birthday" type="xs:date" />
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="person">
+		<xs:sequence>
+			<xs:group ref="persongroup" />
+			<xs:element name="country" type="xs:string" />
+		</xs:sequence>
+		<!-- 属性组引用 -->
+		<xs:attributeGroup ref="personattrgroup" />
+	</xs:complexType>
+	<!-- 元素组结束 -->
+	<!-- 属性组开始 -->
+	<xs:attributeGroup name="personattrgroup">
+		<xs:attribute name="attr1" type="xs:string" use="required" />
+		<xs:attribute name="attr2" type="xs:string" />
+	</xs:attributeGroup>
+	<!-- 属性组结束 -->
 	<xs:element name="note">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="to" type="xs:string" />
 				<xs:element name="from" type="xs:string" />
 				<xs:element name="heading" type="xs:string" />
-				<xs:element name="body" type="xs:string" />
+				<xs:element name="bodya" type="xs:string" />
 				<!-- 整数值大小限定 -->
 				<xs:element name="age">
 					<xs:simpleType>
@@ -131,8 +177,23 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				
+
+				<xs:element name="employee" type="aaa" />
+
+				<!-- 复杂类型 -->
+				<xs:element name="diao">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="diao1" type="aaa" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- 在已有的复合元素之上以某个复合元素为基础，然后添加一些元素 -->
+				<xs:element name="madan" type="fullpersoninfo" />
+				<!-- 元素组元素定义 -->
+				<xs:element name="person" type="person"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
 </xs:schema>

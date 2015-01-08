@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <note xmlns="http://www.dimit.com.cn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.dimit.com.cn http://www.dimit.com.cn/dimit/test.xsd">
+	xsi:schemaLocation="http://www.dimit.com.cn http://www.dimit.com.cn">
 	<to>George</to>
 	<from>John</from>
 	<heading>Reminder</heading>
-	<body>Don't forget the meeting!</body>
+	<bodya>Don't forget the meeting!</bodya>
 	<age>120</age>
-	
 	<car>Audi</car><!-- 限定为枚举类型中几个字母中的一个 -->
 	
 	<letter>a</letter><!-- 限定只能输入为小写字母 -->
@@ -34,4 +33,25 @@
 	<password1>asdasaaa</password1>
 	<!-- 最大长度最小长度限定 -->
 	<password2>55555</password2>
+	<!-- 复杂类型引用 -->
+	<employee>
+		<firstname>ffff</firstname>
+		<lastname>llll</lastname>
+	</employee>
+	<!-- 复杂类型引用测试 -->
+	<diao>
+		<diao1>
+			<firstname>bbb</firstname>
+			<lastname>cccc</lastname>
+		</diao1>
+	</diao>
+	<madan>
+		<firstname>afa</firstname>
+		<address>fasf</address>
+	</madan>
+	<person attr1="aaa" attr2="sss">
+		<firstname>asd</firstname>
+		<birthday>2014-12-11</birthday>
+		<country>asdfas</country>
+	</person>
 </note>
