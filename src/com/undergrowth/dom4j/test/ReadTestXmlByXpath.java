@@ -1,44 +1,24 @@
 package com.undergrowth.dom4j.test;
 
-import java.io.File;
 import java.util.List;
 
-import org.dom4j.Document;
 import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
+import org.dom4j.Node;
 
 /**
- * Dimit 2015年1月8日
- * 通过xpath方式读取节点
+ * Dimit 2015年1月8日 通过xpath方式读取节点
  */
 public class ReadTestXmlByXpath extends AbstractXmlReader {
-	@Override
-	@EfficetCal
-	public Document readXml() {
-		Document doc = constructDoc(XmlReader.PATH);
-		List<?> nodes = doc.selectNodes("//note");
-		for(Object n : nodes) {
-			System.out.println(((Element)n).getName());
-		}
-		return doc;
-	}
-	
-	/**
-	 * 构造document对象
-	 * 
-	 * @param path
-	 *            xml文件路径
-	 * @return {@link org.dom4j.Document}
-	 */
-	private Document constructDoc(String path) {
-		SAXReader reader = new SAXReader();
-		Document document = null;
-		try {
-			document = reader.read(new File(path));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return document;
-	}
-}
 
+	@Override
+	public Element getRoot() {
+		return (Element) this.doc.selectSingleNode(XmlElementContants.FROMROOT
+				+ XmlElementContants.ROOT);
+	}
+
+	@Override
+	public List<?> getRootChildren(Node root) {
+		return root.selectNodes(XmlElementContants.ROOT);
+	}
+
+}

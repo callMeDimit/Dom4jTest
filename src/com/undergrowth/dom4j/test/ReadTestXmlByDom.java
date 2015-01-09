@@ -1,39 +1,24 @@
 package com.undergrowth.dom4j.test;
 
-import java.io.File;
+import java.util.List;
 
-import org.dom4j.Document;
 import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
+import org.dom4j.Node;
 
 /**
  * Dimit 2015年1月8日
  * 通过root读取xml
  */
 public class ReadTestXmlByDom extends AbstractXmlReader {
-	@EfficetCal
-	public Document readXml() {
-		Document doc = constructDoc(XmlReader.PATH);
-		Element root = doc.getRootElement();
-		System.out.println(root.getName());
-		return doc;
+
+	@Override
+	public Element getRoot() {
+		return doc.getRootElement();
 	}
 
-	/**
-	 * 构造document对象
-	 * 
-	 * @param path
-	 *            xml文件路径
-	 * @return {@link org.dom4j.Document}
-	 */
-	private Document constructDoc(String path) {
-		SAXReader reader = new SAXReader();
-		Document document = null;
-		try {
-			document = reader.read(new File(path));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return document;
+	@Override
+	public List<?> getRootChildren(Node root) {
+		return null;
 	}
+	
 }

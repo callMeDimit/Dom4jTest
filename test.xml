@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<note xmlns="http://www.dimit.com.cn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.dimit.com.cn http://www.dimit.com.cn">
+<note xmlns="http://www.dimit.com.cn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.dimit.com.cn http://www.dimit.com.cn">
 	<to>George</to>
 	<from>John</from>
 	<heading>Reminder</heading>
